@@ -52,6 +52,10 @@ In your NixOS profile:
 
 Read [the upstream documentation](https://github.com/stepanzubkov/where-is-my-sddm-theme#keymaps) to find out the keybindings.
 
+## Known Bugs
+
+* if the bar has a black background on i3, you need to pass the `-t` argument to i3bar, and ensure you are using a compositor such as [picom](https://github.com/yshui/picom).
+
 ## FAQ
 
 ### Does it work on Debian?
