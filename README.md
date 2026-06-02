@@ -18,8 +18,11 @@ A minimalist theme for Sway/i3 and SDDM.
 In your home-manager profile:
 
 ```nix
-{
-  imports = [ inputs.swaybian-theme.homeModules.sway-theme ];
+{ config, inputs, ...}: {
+  imports = [ inputs.swaybian-theme.homeModules.default ];
+
+  # we show sway but i3 is handled the same way
+  themes.swaybian.sway.enable = true;
 
   # bars need to be handled explicitly
   wayland.windowManager.sway.config.bars = [
@@ -30,6 +33,11 @@ In your home-manager profile:
   ];
 
   # for i3 only, you also need to set the background picture using your prefered method (e.g. feh)
+  xsession.windowManager.i3.config = {
+    startup = [
+      {command = "feh --bg-scale ${config.lib.swaybian-theme.art.sleepy_no2}";}
+    ];
+  };
 }
 ```
 
@@ -37,7 +45,9 @@ In your NixOS profile:
 
 ```nix
 {
-  imports = [ inputs.swaybian-theme.homeModules.sddm-theme ];
+  imports = [ inputs.swaybian-theme.homeModules.default ];
+
+  themes.swaybian.sddm.enable = true;
 ```
 
 Read [the upstream documentation](https://github.com/stepanzubkov/where-is-my-sddm-theme#keymaps) to find out the keybindings.
