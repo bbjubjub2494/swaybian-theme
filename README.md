@@ -60,7 +60,7 @@ Read [the upstream documentation](https://github.com/stepanzubkov/where-is-my-sd
 
 ### Does it work on Debian?
 
-The Sway and i3 modules probably work with home-manager. For SDDM we can probably hack something with system-manager.
+This is untested. The Sway and i3 modules should work using home-manager. For SDDM we can probably hack something with system-manager.
 
 ### Is it Swabian?
 
